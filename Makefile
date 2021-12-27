@@ -59,4 +59,5 @@ lint:
 	@(	\
 		$(PYTHON_SOURCE); \
 		yamllint .; \
+		ansible-lint .; \
 	)
