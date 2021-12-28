@@ -1,0 +1,8 @@
+---
+- include_tasks: apt.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Install cloudflared
+  package:
+    name:
+      - cloudflared
