@@ -2,6 +2,9 @@
 - include_tasks: apt.yml
   when: ansible_os_family == 'Debian'
 
+- include_tasks: yum.yml
+  when: ansible_os_family == 'RedHat'
+
 - name: Install cloudflared
   package:
     name:
