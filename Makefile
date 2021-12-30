@@ -61,3 +61,10 @@ lint:
 		yamllint .; \
 		ansible-lint .; \
 	)
+
+.PHONY : test
+test:
+	@(	\
+		$(PYTHON_SOURCE); \
+		molecule test; \
+	)

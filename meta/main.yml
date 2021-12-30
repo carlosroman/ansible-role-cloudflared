@@ -19,15 +19,15 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - jessie
-        - stretch
+        # - bullseye
         - buster
-        - bullseye
+        - stretch
+        - jessie
     - name: Ubuntu
       versions:
-        - xenial
-        - bionic
         - focal
+        # - bionic
+        - xenial
 
   galaxy_tags:
     - system
