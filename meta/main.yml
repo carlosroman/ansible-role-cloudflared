@@ -28,6 +28,10 @@ galaxy_info:
         - focal
         # - bionic
         - xenial
+    - name: EL
+      versions:
+        - 6
+        - 7
 
   galaxy_tags:
     - system

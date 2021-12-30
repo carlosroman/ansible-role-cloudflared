@@ -12,9 +12,25 @@
   when:
     - ansible_distribution_major_version == "7"
 
-- name: Install the repository rpm for EL8
+- name: Install the repository rpm for EL6
   yum:
-    name: http://pkg.cloudflare.com/cloudflare-release-latest.el8.rpm
+    name: http://pkg.cloudflare.com/cloudflare-release-latest.el6.rpm
     state: present
   when:
-    - ansible_distribution_major_version == "8"
+    - ansible_distribution_major_version == "6"
+
+- name: Install the repository rpm for Amazon Linux 2
+  yum:
+    name: http://pkg.cloudflare.com/cloudflare-release-latest.el7.rpm
+    state: present
+  when:
+    - ansible_distribution == 'Amazon'
+    - ansible_distribution_major_version == "2"
+
+- name: Fix cloudflare.repo for Amazon Linux 2
+  ansible.builtin.template:
+    src: etc/yum.repos.d/cloudflare.repo.j2
+    dest: /etc/yum.repos.d/cloudflare.repo
+  when:
+    - ansible_distribution == 'Amazon'
+    - ansible_distribution_major_version == "2"
